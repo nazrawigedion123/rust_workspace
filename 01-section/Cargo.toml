@@ -1,0 +1,10 @@
+[workspace]
+resolver = "3"
+members = [
+    "compound-types",
+    "hello",
+    "scalar-data-types", 
+    "variables",
+    "vectors",
+    "strings", "functions", "control_flow",
+]
