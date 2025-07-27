@@ -1,0 +1,1 @@
+fn(Json<ContactForm>) -> impl Future<Output = Json<ResponseMessage>> {contact}: Handler<_, _>
