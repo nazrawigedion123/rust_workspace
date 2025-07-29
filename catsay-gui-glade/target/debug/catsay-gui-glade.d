@@ -1,0 +1,1 @@
+/home/nazri/Documents/rust_workspace/catsay-gui-glade/target/debug/catsay-gui-glade: /home/nazri/Documents/rust_workspace/catsay-gui-glade/src/layout.glade /home/nazri/Documents/rust_workspace/catsay-gui-glade/src/main.rs
