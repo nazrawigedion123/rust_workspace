@@ -1,0 +1,1 @@
+fn(axum::Json<ContactForm>) -> impl Future<Output = axum::Json<ResponseMessage>> {contact}: Handler<_, _>

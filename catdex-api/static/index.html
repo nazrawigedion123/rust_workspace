@@ -1,31 +1,54 @@
 <!DOCTYPE html>
 <html>
-    <head>
-    <meta charset="UTF-8"/>
-    <title>Catdex</title>
+<head>
+    <meta charset="UTF-8" />
+    <title>Catdex</title> <!-- Fixed typo: 'tile' → 'title' -->
     <link
-            rel="stylesheet"
-            href="static/css/index.css"
-            type="text/css"
-            >
-
-    </head>
-    <body>
+        rel="stylesheet"
+        href="static/css/index.css"
+        type="text/css"
+    />
+</head>
+<body>
     <h1>Catdex</h1>
-    <section class="cats">
-        <article class="cat">
-        <h3>British short hair</h3>
-        <img src="image/british-short-hair.png"/>
-        </article>
-        <article class="cat">
-        <h3>Persian</h3>
-        <img src="image/persian.png"/>
 
-        </article>
-        <article class="cat">
-        <h3>Ragdoll</h3>
-        <img src="image/ragdoll.png"/>
-        </article>
+    <section class="cats" id="cats">
+        <p>no cats yet</p>
     </section>
-    </body>
+
+   <script charset="utf-8">
+document.addEventListener("DOMContentLoaded", () => {
+    fetch('/api/cats')
+        .then((response) => response.json())
+        .then((cats) => {
+            // Clear the "No cats yet"
+            const catsSection = document.getElementById("cats");
+            catsSection.innerText = "";
+
+            for (const cat of cats) {
+                const catElement = document.createElement("article");
+                catElement.classList.add("cat");
+
+                const catTitle = document.createElement("h3");
+                const catLink = document.createElement("a");
+                catLink.innerText = cat.name;
+                catLink.href = `static/cat.html?id=${cat.id}`; // ✅ Backticks!
+
+                const catImage = document.createElement("img");
+                catImage.src = `static/${cat.image}` ; // optional fallback
+
+                catTitle.appendChild(catLink);
+                catElement.appendChild(catTitle);
+                catElement.appendChild(catImage);
+
+                catsSection.appendChild(catElement);
+            }
+        })
+        .catch((err) => {
+            console.error("Error fetching cats:", err);
+        });
+});
+</script>
+
+</body>
 </html>

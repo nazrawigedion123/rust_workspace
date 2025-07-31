@@ -1,1 +1,1 @@
-/home/nazri/Documents/rust_workspace/catdex-api/target/debug/catdex-api: /home/nazri/Documents/rust_workspace/catdex-api/src/main.rs
+/home/nazri/Documents/rust_workspace/catdex-api/target/debug/catdex-api: /home/nazri/Documents/rust_workspace/catdex-api/src/main.rs /home/nazri/Documents/rust_workspace/catdex-api/src/model.rs /home/nazri/Documents/rust_workspace/catdex-api/src/schema.rs
